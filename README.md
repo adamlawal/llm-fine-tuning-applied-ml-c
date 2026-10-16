@@ -23,7 +23,3 @@ notebooks/   # fine-tuning notebook(s)
 data/        # local data if needed (gitignored)
 models/      # checkpoints (gitignored)
 ```
-
-## Note
-
-The from-scratch group-chat LM exercise lives on the `adam` branch.
