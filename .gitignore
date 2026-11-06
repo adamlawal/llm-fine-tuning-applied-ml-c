@@ -2,6 +2,8 @@
 data/
 models/*
 !models/.gitkeep
+distilgpt2-squad/
+gpt2-squad/
 
 # Jupyter / Python
 .ipynb_checkpoints/
