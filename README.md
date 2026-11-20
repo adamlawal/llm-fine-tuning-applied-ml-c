@@ -43,11 +43,12 @@ It runs on a Mac (Apple GPU), on Kaggle, or on CPU (slowly). The dataset downloa
 
 ## Who did what
 
-- Mariam Yusuff:
-- Adam Lawal:
-- Tunde Egunjobi:
-- Ayodeji Akande:
-- Chima Precious Ikwen:
+- **Mariam Yusuff:** built the main pipeline the final notebook is based on: data loading and checks, the time split, sliding windows, tokenization, evaluation against the naive baseline, and the grid search with the CSV log. She also tried fine-tuning with Amazon's official Chronos training script (`team-drafts/chronos-fine-tune.ipynb`).
+- **Chima Precious Ikwen:** built our first end-to-end fine-tuning run with the Hugging Face `Trainer`: a custom PyTorch `Dataset` for Chronos tokens, a tokenization check, and saving the model (`team-drafts/chronos-fine-tuning-task.ipynb`).
+- **Adam Lawal:** brought the drafts together into the final notebook, got it running locally, set up the repo, the system design and the slides, and proofread everything.
+- **Tunde Egunjobi:** _to confirm_. Presents evaluation and tuning.
+- **Ayodeji Akande:** _to confirm_. Presents the results.
+
 
 ## What's missing / next
 
