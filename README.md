@@ -20,11 +20,17 @@ We planned to track runs with Weights & Biases (Lectures 8 & 9), but W&B had pau
 
 ## Results
 
-| | test MAE (kW) |
-|---|---|
-| Same as yesterday | |
-| Chronos zero-shot | |
-| Chronos fine-tuned | |
+Mean absolute error on the 30 held-out test days (September 2020). Lower is better.
+
+| | test MAE (kW) | vs same-as-yesterday |
+|---|---|---|
+| Same as yesterday | 6.251 | n/a |
+| Chronos zero-shot | 5.861 | 6.2% better |
+| Chronos fine-tuned (lr 1e-3, 1 epoch) | 5.806 | 7.1% better |
+
+![forecasts on three test days](notebooks/outputs/test_forecasts.png)
+
+**What we found:** Chronos beats "same as yesterday" without any training on our data, so pretraining does most of the work. Fine-tuning for one epoch gave no clear extra gain. It was 0.9% better than zero-shot on the test month, but on the validation month all three learning rates were slightly *worse* than zero-shot (5.79–5.91 kW vs 5.65 kW). The largest learning rate (1e-3) did best, which suggests longer training might help. Every run is logged in `notebooks/outputs/tuning_log.csv`.
 
 ## Running it
 
@@ -49,7 +55,8 @@ It runs on a Mac (Apple GPU), on Kaggle, or on CPU (slowly). The dataset downloa
 - **Tunde Egunjobi:** _to confirm_. Presents evaluation and tuning.
 - **Ayodeji Akande:** _to confirm_. Presents the results.
 
+See [docs/presentation-guide.md](docs/presentation-guide.md) for how we split the talk.
 
 ## What's missing / next
 
-There are no weather inputs yet, and weather is the biggest factor in solar output. We only tested on one month with one seed. Next we'd like to try Nigerian solar data and add weather (Chronos-2 supports extra inputs).
+There are no weather inputs yet, and weather is the biggest factor in solar output. We only tested on one month with one seed, and only tuned the learning rate. The last few hours of the dataset repeat the same value (13.7 kW overnight), which looks like a fill at the end of the file. Next we'd like to try Nigerian solar data and add weather (Chronos-2 supports extra inputs).
