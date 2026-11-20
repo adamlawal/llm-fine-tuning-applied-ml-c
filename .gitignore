@@ -11,3 +11,8 @@ __pycache__/
 *.py[cod]
 .venv/
 .env
+
+# notebook run outputs: keep tuning_log.csv + plots, skip model weights
+notebooks/data/
+notebooks/outputs/chronos-mini-solar/
+notebooks/outputs/trainer_tmp/
